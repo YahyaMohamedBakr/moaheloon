@@ -19,7 +19,7 @@
                             <i class="bi bi-telephone flex-shrink-0"></i>
                             <div>
                                 <h3>اتصل بنا</h3>
-                                <p>+123 456 7890</p>
+                                <p>+966592905717</p>
                             </div>
                         </div>
                         <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">

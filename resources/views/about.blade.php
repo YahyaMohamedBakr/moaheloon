@@ -1,6 +1,6 @@
 <x-app-layout>
-    <section id="about" class="about section">
-        <div class="container section-title" data-aos="fade-up">
+    <section id="about" class="about section ">
+        <div class="container  section-title" data-aos="fade-up">
             <h2>من نحن</h2>
             <p>في مؤهلون، نسعى لإحداث نقلة نوعية في عالم التدريب من خلال تقديم حلول مبتكرة وشاملة.</p>
         </div>

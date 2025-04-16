@@ -34,7 +34,7 @@
                 <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
                     <h4>تواصلوا معنا</h4>
                     <p><strong>البريد الإلكتروني:</strong> <span>info@moahloon.com</span></p>
-                    <p><strong>الهاتف:</strong> <span>+123 456 7890</span></p>
+                    <p><strong>الهاتف:</strong> <span>+966592905717</span></p>
                 </div>
             </div>
         </div>

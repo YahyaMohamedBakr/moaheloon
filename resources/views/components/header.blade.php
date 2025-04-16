@@ -1,9 +1,10 @@
-    <header id="header" class="header fixed-top">
+    
+    <header id="header" class="header {{Route::is('home')?'fixed-top':''}}">
         <div class="topbar d-flex align-items-center">
             <div class="container d-flex justify-content-center justify-content-md-between">
                 <div class="contact-info d-flex align-items-center">
                     <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:info@moahloon.com">info@moahloon.com</a></i>
-                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+123 456 7890</span></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+966592905717">+966592905717</a></i>
                 </div>
                 <div class="social-links d-none d-md-flex align-items-center">
                     <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
