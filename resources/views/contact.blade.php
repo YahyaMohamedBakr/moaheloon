@@ -95,8 +95,14 @@
                     });
         
                     if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(errorData.message || 'حدث خطأ أثناء الإرسال.');
+                        const contentType = response.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            const errorData = await response.json();
+                            throw new Error(errorData.message || 'حدث خطأ أثناء الإرسال.');
+                        } else {
+                            const errorText = await response.text(); // محتوى HTML أو نص
+                            throw new Error('حدث خطأ في السيرفر. يرجى المحاولة لاحقًا.');
+                        }
                     }
         
                     // لو تم الإرسال بنجاح
