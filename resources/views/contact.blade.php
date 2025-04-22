@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <form action="#" method="POST" class="php-email-form" data-aos="fade" data-aos-delay="100">
+                    <form action="{{ route('contact') }}" method="POST" class="php-email-form" data-aos="fade" data-aos-delay="100">
                         @csrf
                         <div class="row gy-4">
                             <div class="col-md-6">
@@ -62,8 +62,56 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('.php-email-form');
+            const loading = form.querySelector('.loading');
+            const errorMsg = form.querySelector('.error-message');
+            const successMsg = form.querySelector('.sent-message');
+        
+            form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+        
+                // عرض رسالة التحميل وإخفاء الرسائل السابقة
+                loading.style.display = 'block';
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
+        
+                const formData = new FormData(form);
+        
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': form.querySelector('input[name="_token"]').value
+                        },
+                        body: formData
+                    });
+        
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || 'حدث خطأ أثناء الإرسال.');
+                    }
+        
+                    // لو تم الإرسال بنجاح
+                    loading.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    form.reset();
+        
+                } catch (error) {
+                    loading.style.display = 'none';
+                    errorMsg.style.display = 'block';
+                    errorMsg.textContent = error.message;
+                }
+            });
+        });
+        </script>
+        
+        
 </x-app-layout>
